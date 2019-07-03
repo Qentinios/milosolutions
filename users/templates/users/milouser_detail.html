@@ -1,2 +1,20 @@
+{% extends 'users/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
     <h1>User Details</h1>
     <p>Username: {{object.username}}</p>
+    <p>Last login: {{object.last_login}}</p>
+    <p>First name: {{object.first_name}}</p>
+    <p>Last name: {{object.last_name}}</p>
+    <p>Email: {{object.email}}</p>
+    <p>Flags:
+        {% if object.is_superuser %}<span class="badge badge-primary">Superuser</span>{% endif %}
+        {% if object.is_staff %}<span class="badge badge-secondary">Staff</span>{% endif %}
+        {% if object.is_active %}<span class="badge badge-success">Active</span>
+        {% else %}<span class="badge badge-danger">Disabled</span>{% endif %}
+    </p>
+    <p>Birthday: {{object.birthday}}</p>
+    <p>Random: {{object.random}}</p>
+{% endblock %}

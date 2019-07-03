@@ -1,7 +1,12 @@
+{% extends 'users/base.html' %}
 
+{% load crispy_forms_tags %}
+
+{% block content %}
     <h1>New/Edit User</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit" />
+        {{ form|crispy }}
+        <input class="btn btn-success" type="submit" value="Submit" />
     </form>
+{% endblock %}
