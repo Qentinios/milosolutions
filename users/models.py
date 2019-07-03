@@ -9,4 +9,4 @@ def random_int():
 
 class MiloUser(AbstractUser):
     birthday = models.DateField(null=True)
-    random = models.IntegerField(editable=False, default=random_int())
+    random = models.IntegerField(editable=False, default=random_int)
