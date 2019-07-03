@@ -15,6 +15,7 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Flags</th>
+                <th scope="col">Birthday</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -33,6 +34,7 @@
                     {% if user.is_active %}<span class="badge badge-success">Active</span>
                     {% else %}<span class="badge badge-danger">Disabled</span>{% endif %}
                 </td>
+                <td>{{ user.birthday }}</td>
                 <td>
                     <a class="btn btn-sm btn-primary mb-1" href="{% url "user_view" user.id %}">view</a>
                     <a class="btn btn-sm btn-primary mb-1" href="{% url "user_edit" user.id %}">edit</a>
